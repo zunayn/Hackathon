@@ -1,0 +1,17 @@
+# File: supabase/config.toml
+
+# This should already be filled in from when you ran "supabase link"
+project_id = "YOUR_PROJECT_ID"
+
+[api]
+  port = 54321
+  schemas = ["public", "storage", "graphql"]
+  max_rows = 1000
+
+# Explicitly define the import_map for each function individually
+# This is a more robust method to avoid parsing errors.
+[functions.generate-milestones]
+  import_map = "import_map.json"
+
+[functions.summarize-description]
+  import_map = "import_map.json"
